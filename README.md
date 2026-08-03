@@ -71,6 +71,9 @@ Or if you don't want to use VSCode, you can run standard gnu `make` in the root 
 `lib/DaisySp` and finally in the repository root. Then you can use `make program` or
 `make program-dfu` to flash the built binary.
 
+## Credits
+See [CREDITS.md](https://github.com/Synthux-Academy/Audrey-II/blob/main/CREDITS.md)
+
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.
