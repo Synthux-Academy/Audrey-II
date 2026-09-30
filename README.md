@@ -47,6 +47,9 @@ https://youtu.be/icYm5FpZtrU
 
 ### [🛠️ Build Guide](https://www.notion.so/tsemah/Audrey-II-Assembly-Tutorial-1736331933b8809f8412f94f634622a5?pvs=4)
 
+### Optional: Stereo I/O Mod
+Audrey II can take external audio input with a small hardware mod. See [doc/stereo-io-mod.md](doc/stereo-io-mod.md).
+
 ## Flashing the Daisy Seed
 
 The easiest way to program an assembled Audrey II is with a pre-built binary file.
