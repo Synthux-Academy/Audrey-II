@@ -7,10 +7,14 @@ the inputs, nothing changes.
 
 So adding an input is a hardware-only mod. Two common approaches:
 
-1. **Add one TRS input jack.** Keep the existing mono outputs and wire a
-   stereo (TRS) jack to Synthux pins 16 (Left / Tip) and 17 (Right / Ring),
-   with the Sleeve to ground. A mono (TS) cable also works: it simply
-   feeds the left input.
+1. **Add one TRS input jack on the side (easiest).** Keep the existing mono
+   outputs and mount a panel-mount stereo (TRS) jack in the side of the case.
+   It doesn't touch the matrix, so it only needs three wires:
+   - Tip (Left) → Synthux pin 16
+   - Ring (Right) → Synthux pin 17
+   - Sleeve → GND
+
+   A mono (TS) cable also works: it simply feeds the left input.
 2. **Swap the two mono jacks for TRS jacks.** Desolder the original mono jacks
    and replace them with stereo Thonkiconns (PJ366ST), giving one stereo output
    and one stereo input on the same footprint.
