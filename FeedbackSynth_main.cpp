@@ -19,7 +19,8 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
     controls.Update(hw);
     controls.Process();
     for (size_t i=0; i<size; i++) {
-        engine.Process(IN_L[i], OUT_L[i], OUT_R[i]);
+        // Sum L+R so stereo (TRS) input mods work; stock mono builds are unaffected
+        engine.Process(IN_L[i] + IN_R[i], OUT_L[i], OUT_R[i]);
     }
     limiter[0].ProcessBlock(OUT_L, size, 0.7f);
     limiter[1].ProcessBlock(OUT_R, size, 0.7f);
