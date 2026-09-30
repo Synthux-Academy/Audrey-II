@@ -16,17 +16,38 @@ So adding an input is a hardware-only mod. Two common approaches:
    and one stereo input on the same footprint.
 
 The audio pins 16–19 are on the side of the Daisy where the Synthux pin
-numbers match the Seed pin numbers:
+numbers match the Seed pin numbers.
 
-| Signal    | Synthux pin |
-| :-------- | :---------- |
-| Left In   | 16          |
-| Right In  | 17          |
-| Left Out  | 18          |
-| Right Out | 19          |
+## Option 2 on the Designer PCB: what changes
 
-For a full step-by-step guide to option 2 (desoldering, matrix routing, bridging
-the Ring pads and the ground mod), see
+On the Designer PCB each jack footprint sits in a matrix slot. A slot's data pad
+is wired from the numbered pin at the bottom of its column to a Synthux pin.
+A TRS jack's Ring has its own isolated pad, which you bridge to the data pad of
+the unused slot next to it. That slot's pin is then wired to the Daisy like any
+other.
+
+| Jack | Signal      | Jack pin | Matrix slot      | Synthux pin | Stock build     |
+| :--- | :---------- | :------- | :--------------- | :---------- | :-------------- |
+| Out  | Left Out    | Tip      | 76               | 18          | 76 → 18 (keep)  |
+| Out  | Right Out   | Ring     | 71 (bridged)     | 19          | was 77 → 19     |
+| Out  | Ground      | Sleeve   | neighbouring GND | –           | –               |
+| In   | Left In     | Tip      | 77               | 16          | –               |
+| In   | Right In    | Ring     | 72 (bridged)     | 17          | –               |
+| In   | Ground      | Sleeve   | neighbouring GND | –           | –               |
+
+In short, once the two TRS jacks are fitted in slots 76 and 77:
+
+- **Bridge 2 pads:** Ring pad of 76 → slot 71, and Ring pad of 77 → slot 72.
+  Short jumper wires on the back of the PCB work well.
+- **Move 1 wire:** the existing wire from 77 → 19 moves to 71 → 19.
+  The 76 → 18 wire stays as it is.
+- **Add 2 wires:** 77 → 16 and 72 → 17.
+- **Ground:** the Thonkiconn's long Sleeve pin can be bent over to reach the GND
+  pad of the neighbouring footprint and soldered there. No extra ground wire
+  is needed.
+
+For the full step-by-step guide with photos (desoldering tips, the routing
+diagram, bridging and the ground mod), see
 [Audio I/O Mod: Upgrading to Stereo TRS](https://github.com/jonwaterschoot/Feedback-Gardenscpr-for-Synthux-Audrey-II#audio-io-mod-upgrading-to-stereo-trs)
 by Jon Waterschoot.
 
