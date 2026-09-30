@@ -20,6 +20,12 @@ numbers match the Seed pin numbers.
 
 ## Option 2 on the Designer PCB: what changes
 
+> **Fit warning:** the stereo Thonkiconn (PJ366ST) does not sit in exactly the
+> same place as the original mono jack, so the centre of the jack ends up
+> slightly off from the original hole. This mod has not been tested with the
+> official Audrey II faceplate. Check the alignment before soldering, and be
+> ready to enlarge the panel holes slightly if needed.
+
 On the Designer PCB each jack footprint sits in a matrix slot. A slot's data pad
 is wired from the numbered pin at the bottom of its column to a Synthux pin.
 A TRS jack's Ring has its own isolated pad, which you bridge to the data pad of
